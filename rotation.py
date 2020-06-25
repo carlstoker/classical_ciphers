@@ -51,10 +51,3 @@ class Rotate:
         :return: Decrypted ciphertext
         """
         return rotate_string(ciphertext, self.shift * -1)
-
-
-# ROT13 Cipher
-rot13 = Rotate(13)
-
-# Caesar Cipher
-caesar = Rotate(-3)
