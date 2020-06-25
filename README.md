@@ -9,7 +9,7 @@ The default alphabet for this cipher is the lowercase English alphabet.
 `key_a` and the length of the default alphabet (26) must be [coprime](https://en.wikipedia.org/wiki/Coprime_integers).
 ````python
 import affine
-affine = affine.Affine(key_a, key_b)
+affine = affine.Affine(4, 9)
 ````
 
 ##### Atbash Cipher
