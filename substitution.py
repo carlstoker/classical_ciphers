@@ -11,4 +11,4 @@ import string
 class Substitution(Vigenere):
     def __init__(self, shift):
         alphabet = string.ascii_lowercase
-        super().__init__(alphabet[shift])
+        super().__init__(alphabet[shift % len(alphabet)])
