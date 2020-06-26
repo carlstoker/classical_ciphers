@@ -24,6 +24,6 @@ atbash = affine.Affine(25, 25)
 #### Example
 ```python
 import rotation
-caesar = rotation.Rotate(-3)
-rot13 = rotation.Rotate(13)
+caesar = rotation.Caesar()
+rot13 = rotation.Rot13()
 ```

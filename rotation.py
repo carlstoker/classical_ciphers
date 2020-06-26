@@ -32,7 +32,7 @@ def rotate_string(string, shift):
     return "".join(rotate_char(c, shift) for c in string)
 
 
-class Rotate:
+class Rotation:
     def __init__(self, shift):
         self.shift = shift
 
@@ -51,3 +51,16 @@ class Rotate:
         :return: Decrypted ciphertext
         """
         return rotate_string(ciphertext, self.shift * -1)
+
+
+class Caesar(Rotation):
+    """ Rotation cipher with a shift of 3. """
+    def __init__(self):
+        super().__init__(3)
+
+
+class Rot13(Rotation):
+    """ Rotation cipher with a shift of 13"""
+    def __init__(self):
+        super().__init__(13)
+
