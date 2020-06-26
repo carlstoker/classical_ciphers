@@ -72,6 +72,11 @@ class Affine:
         return None
 
 
+class Atbash(Affine):
+    def __init__(self):
+        super().__init__(25, 25)
+
+
 def is_coprime(num1, num2):
     """ Determine if two integers are coprime using Euclid's algorithm
 

@@ -15,8 +15,13 @@ affine = affine.Affine(4, 9)
 ##### Atbash Cipher
 The Atbash cipher is a version of the Affine cipher, using 25 as both `key_a` and `key_b`
 ```` python
+atbash = affine.Atbash()
+````
+or
+```` python
 atbash = affine.Affine(25, 25)
 ````
+
 
 ### rotation.py
 [Caesar](https://en.wikipedia.org/wiki/Caesar_cipher) and [ROT13](https://en.wikipedia.org/wiki/ROT13) ciphers
