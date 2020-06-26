@@ -1,3 +1,11 @@
+""" Affine Cipher, another monoalphabetic substitution cipher
+
+More info:
+https://en.wikipedia.org/wiki/Affine_cipher
+http://practicalcryptography.com/ciphers/classical-era/affine/
+"""
+
+
 class Affine:
     def __init__(self, key_a, key_b, alphabet="abcdefghijklmnopqrstuvwxyz"):
         self.key_a = key_a
@@ -70,11 +78,6 @@ class Affine:
 
         # Otherwise, return None
         return None
-
-
-class Atbash(Affine):
-    def __init__(self):
-        super().__init__(25, 25)
 
 
 def is_coprime(num1, num2):
