@@ -49,6 +49,16 @@ from rot13 import Rot13
 r = Rot13()
 ```
 
+### [Running Key](https://en.wikipedia.org/wiki/Running_key_cipher) Cipher
+A variant of the [Vigenère](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher) cipher where the key must be longer than the plaintext.
+
+#### Example
+```python
+from runningkey import RunningKey
+key = "itwasthebestoftimesitwastheworstoftimes"
+r = RunningKey(key)
+```
+
 ### [Simple Substitution](https://en.wikipedia.org/wiki/Substitution_cipher#Simple_substitution) Cipher
 A [monoalphabetic substitution cipher](https://en.wikipedia.org/wiki/Substitution_cipher#Simple_substitution) which shifts the plaintext by the specified `shift` parameter.
 #### Example
