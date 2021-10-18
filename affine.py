@@ -4,16 +4,17 @@ More info:
 https://en.wikipedia.org/wiki/Affine_cipher
 http://practicalcryptography.com/ciphers/classical-era/affine/
 """
+import math
 
 
 class Affine:
-    def __init__(self, key_a, key_b, alphabet="abcdefghijklmnopqrstuvwxyz"):
+    def __init__(self, key_a: str, key_b: str, alphabet: str = "abcdefghijklmnopqrstuvwxyz") -> None:
         self.key_a = key_a
         self.key_b = key_b
         self.alphabet = alphabet
         self.modular_inverse = self.calculate_modular_inverse()
 
-    def encrypt(self, plaintext):
+    def encrypt(self, plaintext: str) -> str:
         """ Encrypt plaintext using the Affine cipher
 
         :param plaintext: Plaintext to encrypt
@@ -31,7 +32,7 @@ class Affine:
                 continue
 
             # Calculate the new character position using the Affine algorithm.
-            cipher_pos = ((self.key_a * self.alphabet.index(char)) + self.key_b)
+            cipher_pos = (self.key_a * self.alphabet.index(char)) + self.key_b
             cipher_pos %= len(self.alphabet)
 
             # Add the character at that new position to the ciphertext.
@@ -39,11 +40,14 @@ class Affine:
 
         return ciphertext
 
-    def decrypt(self, ciphertext):
-        """ Decrypt ciphertext
+    def decrypt(self, ciphertext: str) -> str:
+        """Decrypt ciphertext
 
-        :param ciphertext: Ciphertext to decrypt
-        :return: Decrypted ciphertext
+        Args:
+            ciphertext (str): Ciphertext to decrypt
+
+        Returns:
+            str: Decrypted ciphertext
         """
         if not is_coprime(self.key_a, len(self.alphabet)):
             return None
@@ -52,7 +56,7 @@ class Affine:
         plaintext = ""
 
         for char in ciphertext:
-            # Ignore characters not in the alphabet
+            # Do not encrypt characters not in the alphabet, they will be passed as cleartext
             if char not in self.alphabet:
                 plaintext += char
                 continue
@@ -65,9 +69,11 @@ class Affine:
 
         return plaintext
 
-    def calculate_modular_inverse(self):
-        """ Find the modular inverse of key_a
-        :return: Modular inverse of key_a
+    def calculate_modular_inverse(self) -> int:
+        """Find the modular inverse of key_a
+
+        Returns:
+            int: Modular inverse of key_a
         """
 
         # Only loop through integers up to the value of the modulus.
