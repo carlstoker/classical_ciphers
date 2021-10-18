@@ -12,6 +12,14 @@ class Vigenere:
         self.key = key
         self.alphabet = alphabet
 
+        self.check_key()
+
+    def check_key(self):
+        for char in self.key:
+            if char not in self.alphabet:
+                err = 'Invalid character in key which does not exist in the alphabet: "{}"'.format(char)
+                raise ValueError(err)
+
     def encrypt(self, plaintext):
         """ Encrypt plaintext using Vigenere cipher
 
