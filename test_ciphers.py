@@ -1,5 +1,3 @@
-import string
-
 from affine import Affine
 from atbash import Atbash
 from caesar import Caesar
