@@ -10,7 +10,7 @@ A [monoalphabetic substitution cipher](https://en.wikipedia.org/wiki/Substitutio
 #### Example
 ````python
 from affine import Affine
-key_a = 4
+key_a = 7
 key_b = 9
 a = Affine(key_a, key_b)
 ````
